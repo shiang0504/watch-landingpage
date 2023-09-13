@@ -70,7 +70,11 @@ const setCursor = computed(()=>{
 </script>
 
 <template>
-  <div class="cursor" :style="setCursor"></div>
+  <div class="cursor" :style="setCursor">
+    <div>SCROLL</div>
+    <div>DOWN</div>
+    <div></div>
+  </div>
   <div class="scale"></div>
   <div class="arrow" :style="styleMaker(positionOfAllPage, 'top')" @click="toTop()"></div>
   <!-- <div class="test"> -->
@@ -129,7 +133,7 @@ const setCursor = computed(()=>{
       <div class="horizontal" :style="styleMaker(luminous_position4.get1to0,'translateX')">
         <div class="movement">
           <div class="picture">
-            <img src="./assets/S_027975.jpg" alt="" loading="lazy">
+            <img src="./assets/S_027975.jpg" alt="">
           </div>
           <div class="horizontal_info">
             <h3>歐米茄8500機芯</h3>
@@ -140,7 +144,7 @@ const setCursor = computed(()=>{
         </div>
         <div class="movement">
           <div class="picture">
-            <img src="./assets/S_027962.jpg" alt="" loading="lazy">
+            <img src="./assets/S_027962.jpg" alt="">
           </div>
           <div class="horizontal_info">
             <h3>排氦氣閥門</h3>
@@ -151,7 +155,7 @@ const setCursor = computed(()=>{
         </div>
         <div class="movement">
           <div class="picture">
-            <img src="./assets/S_028776.jpg" alt="" loading="lazy">
+            <img src="./assets/S_028776.jpg" alt="">
           </div>
           <div class="horizontal_info">
             <h3>歐米茄8500機芯</h3>
@@ -582,6 +586,8 @@ $color_gray:rgb(172, 172, 172);
 }
 .detail{
   min-height: 100vh;
+  // font-size: 18px;
+  font-weight: 800;
   .backgrund{
     min-height: 100vh;
     width: 100%;
@@ -692,8 +698,11 @@ $color_gray:rgb(172, 172, 172);
   top: 0;
   left: 0;
   z-index: 1000;
-  width: 50px;
-  height: 50px;
+  @include flex-center;
+  flex-direction: column;
+  width: 100px;
+  height: 100px;
+  font-size: 12px;
   border-radius: 50%;
   border: 1px solid $color_gray;
   transform: translate(-50%, -50%);
